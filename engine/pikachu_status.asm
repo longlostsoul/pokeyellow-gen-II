@@ -193,6 +193,16 @@ LoadPokeFollowSprite::
 	ld a, SPRITE_EEVEE
 	jr .end
 .curMonNotThis4
+	cp GRIMER + 1
+	jr nz, .curMonNotThiss
+	ld a, SPRITE_DITTO
+	jr .end
+.curMonNotThiss
+	cp MUK + 1
+	jr nz, .curMonNotThissss
+	ld a, SPRITE_DITTO
+	jr .end
+.curMonNotThissss
 	cp DITTO + 1
 	jr nz, .curMonNotThisDitto
 	ld a, SPRITE_DITTO
@@ -228,6 +238,16 @@ LoadPokeFollowSprite::
 	ld a, SPRITE_SEEL
 	jr .end2 
 .curMonNotThisFishfood
+  cp ZUBAT + 1      
+	jr nz, .curMonNotThisPoison
+	ld a, SPRITE_ZUBAT
+	jr .end2
+.curMonNotThisPoison
+  cp GOLBAT + 1
+	jr nz, .curMonNotThisPoison2
+	ld a, SPRITE_ZUBAT
+	jr .end2
+.curMonNotThisPoison2
 	cp SANDSHREW + 1
 	jr nz, .curMonNotThisShrew
 	ld a, SPRITE_SANDSHREW
@@ -352,11 +372,11 @@ LoadPokeFollowSprite::
 	ld a, SPRITE_GHOST
 	jr .resume
 .curMonNotThisGhost
-  cp POISON       
-	jr nz, .curMonNotThisPoison
-	ld a, SPRITE_ZUBAT
+  cp GROUND       
+	jr nz, .curMonNotThisGr
+	ld a, SPRITE_GEODUDE
 	jr .resume
-.curMonNotThisPoison
+.curMonNotThisGr
   ld a,[wPartyMon1Type2]
 	cp FLYING
 	jr nz, .curMonNotThisBird
