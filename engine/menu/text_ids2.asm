@@ -166,7 +166,7 @@ TextBoxTextAndCoordTable:
 	db 3,0   ; text coordinates
 
 	db USE_TOSS_MENU_TEMPLATE
-	db 13,10,19,16 ; text box coordinates
+	db 13,10,19,14 ; text box coordinates
 	dw UseTossText
 	db 15,11 ; text coordinates
 
@@ -222,9 +222,8 @@ BuySellQuitText:
 	next "SELL"
 	next "QUIT@@"
 
-UseTossText: 
+UseTossText:
 	db   "USE"
-	;next "GIVE";where I put my hold item text for bag. not currently in use
 	next "TOSS@"
 
 JapaneseSaveMessageText:
@@ -247,7 +246,7 @@ JapaneseMainMenuText:
 
 BattleMenuText:
 	db   "FIGHT ",$E1,$E2
-	next "PACK  RUN@"
+	next "ITEM  RUN@"
 
 SafariZoneBattleMenuText:
 	db   "BALL×       BAIT"
@@ -527,7 +526,7 @@ TwoOptionMenuStrings:
 	db "TRADE",$4E,"CANCEL@"
 .HealCancelMenu
 	db "HEAL",$4E,"CANCEL@"
-	
+
 DisplayFieldMoveMonMenu:
 	xor a
 	ld hl, wFieldMoves

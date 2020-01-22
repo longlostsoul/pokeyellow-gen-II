@@ -1179,7 +1179,7 @@ Mon038_EvosMoves:
 Mon025_EvosMoves:
 ;PIKACHU
 ;Evolutions
-	db EV_ITEM,THUNDER_STONE,1,RAICHU
+	db EV_LEVEL,16,RAICHU
 	db 0
 ;Learnset
 	db 6,TAIL_WHIP
@@ -1204,6 +1204,7 @@ Mon026_EvosMoves:
 	db 30,SLAM
 	db 49,LIGHT_SCREEN
 	db 54,THUNDER
+	db 55,SURF
 	db 0
 
 Mon166_EvosMoves:

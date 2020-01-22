@@ -2935,6 +2935,18 @@ _BoxIsFullText::
 	line "a #MON CENTER!"
 	done
 
+_BoxIsFullReminderText::
+	text "The #mon Box"
+	line "is now full."
+	cont "It won't hold"
+	cont "more #mon."
+	
+	para "Change the Box at"
+	line "a #mon Center!"
+	prompt
+
+
+
 INCLUDE "text/maps/pallet_town.asm"
 INCLUDE "text/maps/viridian_city.asm"
 INCLUDE "text/maps/pewter_city.asm"

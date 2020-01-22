@@ -1,14 +1,15 @@
 # Pokémon Yellow  #
 
-Currently buggy, don't use. I ported over too much code at once. :P
 
 This is a disassembly of Pokémon Yellow, with:
  All pokemon following
- Pikachu evolvable into Raichu
+ Pikachu evolvable into Raichu by happiness (min level 16)
  Boy/girl added on
  Running Shoes
  More mons added to the wild for 151 catchability
  Fairy, Dark, Steel added
+ 
+ Warning: There may be a crash at the surf house, haven't tested it yet but was there last time I had everything reverted back this old... (there is a much improved version of this called EvoYellow with Day/Night and new gen pokemons; this is the minimalist version!)
  
  The following later-gen style type changes:
  Mr.Mime, Clefairy fam get fairy typing like later gens
