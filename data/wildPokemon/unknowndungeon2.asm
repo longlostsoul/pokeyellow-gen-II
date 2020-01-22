@@ -4,7 +4,7 @@ DungeonMons2:
 	db 57,GOLBAT
 	db 50,GOLEM
 	db 56,SANDSLASH
-	db 50,RHYHORN
+	db 50,PORYGON
 	db 60,MEW
 	db 58,GLOOM
 	db 58,WEEPINBELL

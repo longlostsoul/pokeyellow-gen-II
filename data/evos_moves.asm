@@ -222,6 +222,7 @@ Mon032_EvosMoves:
 	db EV_LEVEL,16,NIDORINO
 	db 0
 ;Learnset
+  db 5,PECK
 	db 8,HORN_ATTACK
 	db 12,DOUBLE_KICK
 	db 17,POISON_STING
@@ -373,6 +374,7 @@ Mon029_EvosMoves:
 	db EV_LEVEL,16,NIDORINA
 	db 0
 ;Learnset
+  db 5,DIG
 	db 8,SCRATCH
 	db 12,DOUBLE_KICK
 	db 17,POISON_STING
@@ -567,14 +569,15 @@ Mon114_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 24,BIND
-	db 27,ABSORB
-	db 29,VINE_WHIP
+	db 5,BIND
+	db 7,ABSORB
+	db 15,VINE_WHIP
 	db 32,POISONPOWDER
 	db 36,STUN_SPORE
 	db 39,SLEEP_POWDER
 	db 45,SLAM
 	db 48,GROWTH
+	db 50,MEGA_DRAIN
 	db 0
 
 Mon152_EvosMoves:
@@ -780,9 +783,10 @@ Mon054_EvosMoves:
 	db EV_LEVEL,33,GOLDUCK
 	db 0
 ;Learnset
-  db 10,CONFUSION
-  db 25,BUBBLE
-	db 28,TAIL_WHIP
+  db 7,CONFUSION
+  db 15,BUBBLE
+  db 25,TAIL_WHIP
+	db 28,WATER_GUN
 	db 31,DISABLE
 	db 36,PSYCHIC
 	db 43,FURY_SWIPES
@@ -1046,7 +1050,7 @@ Mon060_EvosMoves:
 	db EV_LEVEL,25,POLIWHIRL
 	db 0
 ;Learnset
-	db 16,HYPNOSIS
+	db 10,HYPNOSIS
 	db 19,WATER_GUN
 	db 25,DOUBLESLAP
 	db 31,BODY_SLAM
@@ -1389,11 +1393,11 @@ Mon133_EvosMoves:
 	db 0
 ;Learnset
 	db 8,SAND_ATTACK
-	db 16,GROWL
-	db 23,QUICK_ATTACK
-	db 30,BITE
-	db 36,FOCUS_ENERGY
-	db 42,TAKE_DOWN
+	db 10,GROWL
+	db 12,QUICK_ATTACK
+	db 16,BITE
+	db 25,FOCUS_ENERGY
+	db 32,TAKE_DOWN
 	db 0
 
 Mon136_EvosMoves:

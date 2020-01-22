@@ -1,7 +1,7 @@
 IslandMonsB1:
 	db $0A
-	db 27,ZUBAT
-	db 26,KRABBY
+	db 27,JYNX
+	db 26,HITMONCHAN
 	db 36,ZUBAT
 	db 28,KRABBY
 	db 27,GOLBAT
