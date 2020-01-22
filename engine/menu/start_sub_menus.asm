@@ -152,7 +152,7 @@ StartMenu_Pokemon:
 .asm_5d4c
 	call Func_1510
 	jp .goBackToMap
-.cut ; 11d52 (4:5d52)
+.cut
 	bit 1,a ; does the player have the Cascade Badge?
 	jp z,.newBadgeRequired
 	predef UsedCut
@@ -369,6 +369,7 @@ StartMenu_Item:
 	ld [hli],a ; current menu item ID
 	inc hl
 	inc a ; a = 1
+	inc a; 2
 	ld [hli],a ; max menu item ID
 	ld a,A_BUTTON | B_BUTTON
 	ld [hli],a ; menu watched keys
@@ -396,8 +397,19 @@ StartMenu_Item:
 .notBicycle2
 	ld a,[wCurrentMenuItem]
 	and a
+	;cp a, 2
+	;jr z, .tossItem
+	;cp a, 1
+	;jr z, .giveItem1 ;give item to hold on to
 	jr nz,.tossItem
 ; use item
+ ; jr .useitem
+;.giveItem1
+;  ld b,a
+;  ld a,8
+;  ld [wTemp],a
+;  ld a,b
+;.useitem
 	ld [wPseudoItemID],a ; a must be 0 due to above conditional jump
 	ld a,[wcf91]
 	cp a,HM_01
@@ -414,6 +426,10 @@ StartMenu_Item:
 	call UseItem
 	jp ItemMenuLoop
 .useItem_closeMenu
+  ;ld a,[wTemp]
+	;cp a, 8
+	;jr z, .giveItem
+	;don't want this one
 	xor a
 	ld [wPseudoItemID],a
 	call UseItem
@@ -422,6 +438,10 @@ StartMenu_Item:
 	jp z,ItemMenuLoop
 	jp CloseStartMenu
 .useItem_partyMenu
+  ;ld a,[wTemp]
+	;cp a, 8
+	;jr z, .giveItem
+	;hopefully works to give
 	ld a,[wUpdateSpritesEnabled]
 	push af
 	call UseItem
@@ -453,6 +473,25 @@ StartMenu_Item:
 	call TossItem
 .tossZeroItems
 	jp ItemMenuLoop
+;.giveItem
+ ; ld a,[wUpdateSpritesEnabled]
+;	push af
+;	callab GivePokeHoldItem
+;	ld a,[wActionResultOrTookBattleTurn]
+;	cp a,$02
+;	jp z,.partyMenuNotDisplayed
+;	call GBPalWhiteOutWithDelay3
+;	call RestoreScreenTilesAndReloadTilePatterns
+;	pop af
+;	ld [wUpdateSpritesEnabled],a
+;	jp StartMenu_Item
+
+;.infoItem
+;	ld a,[wcf91]
+;	ld hl, DisplayItemDescription
+;	ld b, Bank(DisplayItemDescription)
+;	call Bankswitch
+;	jp ItemMenuLoop
 
 CannotUseItemsHereText:
 	TX_FAR _CannotUseItemsHereText
@@ -500,6 +539,9 @@ UsableItems_PartyMenu:
 	db MAX_ETHER
 	db ELIXER
 	db MAX_ELIXER
+;	db SUN_STONE
+;	db LOVE_STONE
+;	db FROST_STONE
 	db $ff
 
 ; items which close the item menu when used
@@ -541,6 +583,12 @@ StartMenu_TrainerInfo:
 DrawTrainerInfo:
 	ld de,RedPicFront
 	lb bc, BANK(RedPicFront), $01
+	ld a, [wPlayerGender]
+	and a
+	jr z, .AreBoy
+	ld de,LeafPicFront
+	lb bc, BANK(LeafPicFront), $01
+.AreBoy
 	predef DisplayPicCenteredOrUpperRight
 	call DisableLCD
 	coord hl, 0, 2

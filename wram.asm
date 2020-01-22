@@ -1712,6 +1712,9 @@ wListPointer:: ; cf8a
 wUnusedCF8D:: ; cf8c
 ; 2 bytes
 ; used to store pointers, but never read
+wTempMoveID::
+wTemp::
+wGenderTemp::
 	ds 2
 
 wItemPrices:: ; cf8e
@@ -1996,7 +1999,8 @@ wPlayerBattleStatus3:: ; d063
 ; bit 0 - toxic
 ; bit 1 - light screen
 ; bit 2 - reflect
-; bit 3 - tranformed
+; bit 3 - transformed
+; maybe bit 4, weather, 5 spikes, 6 somethin' else?
 	ds 1
 
 wEnemyStatsToDouble:: ; d064
@@ -2149,6 +2153,9 @@ wNewSlotMachineBallTile:: ; d089
 wCoordAdjustmentAmount:: ; d089
 ; how much to add to the X/Y coord
 
+wEnemyWentFirst::
+wShinyMonFlag::
+wTempLevel::
 wUnusedD08A:: ; d089
 	ds 1
 
@@ -3528,6 +3535,7 @@ wOpponentAfterWrongAnswer:: ; da37
 ; gym quiz
 
 wUnusedDA38:: ; da37
+wPlayerGender::
 	ds 1
 
 wCurMapScript:: ; da38
