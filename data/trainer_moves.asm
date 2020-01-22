@@ -37,9 +37,9 @@ SpecialTrainerMoves:
 
 	db KOGA,$1
 	db 1,1,TOXIC
-	db 1,2,TACKLE
+	db 1,2,DIG
 	db 2,1,TOXIC
-	db 2,3,SUPERSONIC
+	db 2,3,EARTHQUAKE
 	db 3,1,TOXIC
 	db 3,2,DOUBLE_EDGE
 	db 4,1,LEECH_LIFE
@@ -58,25 +58,25 @@ SpecialTrainerMoves:
 
 	db SABRINA,$1
 	db 1,1,FLASH
-	db 2,1,KINESIS
-	db 2,4,PSYWAVE
+	db 2,1,MEGA_DRAIN
+	db 2,4,PSYCHIC
 	db 3,1,PSYWAVE
 	db 0
 
 	db GIOVANNI,$3
 	db 1,3,FISSURE
-	db 2,2,DOUBLE_TEAM
-	db 3,1,EARTHQUAKE
-	db 3,3,THUNDER
+	db 2,2,THUNDERBOLT
+	db 3,1,SURF
+	db 3,3,ICE_BEAM
 	db 4,1,EARTHQUAKE
-	db 4,2,LEER
+	db 4,2,SLUDGE
 	db 4,3,THUNDER
 	db 5,1,ROCK_SLIDE
 	db 5,4,EARTHQUAKE
 	db 0
 
 	db LORELEI,$1
-	db 1,1,BUBBLEBEAM
+	db 1,1,BLIZZARD
 	db 2,3,ICE_BEAM
 	db 3,1,PSYCHIC_M
 	db 3,2,SURF
@@ -94,7 +94,7 @@ SpecialTrainerMoves:
 	db 3,2,MEGA_KICK
 	db 3,4,DOUBLE_TEAM
 	db 4,1,ROCK_SLIDE
-	db 4,2,SCREECH
+	db 4,2,ICE_BEAM
 	db 4,4,EARTHQUAKE
 	db 5,2,KARATE_CHOP
 	db 5,3,STRENGTH
@@ -106,7 +106,7 @@ SpecialTrainerMoves:
 	db 1,4,MEGA_DRAIN
 	db 2,2,TOXIC
 	db 2,4,LEECH_LIFE
-	db 3,2,LICK
+	db 3,2,FIRE_BLAST
 	db 4,1,WRAP
 	db 5,2,PSYCHIC_M
 	db 0
@@ -118,7 +118,7 @@ SpecialTrainerMoves:
 	db 3,1,BUBBLEBEAM
 	db 3,2,WRAP
 	db 3,3,ICE_BEAM
-	db 4,1,WING_ATTACK
+	db 4,1,EARTHQUAKE
 	db 4,2,SWIFT
 	db 4,3,FLY
 	db 5,1,BLIZZARD

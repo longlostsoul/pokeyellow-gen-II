@@ -1,8 +1,8 @@
 TunnelMonsB1:
 	db $0F
-	db 15,ZUBAT
+	db 15,JYNX
 	db 16,GEODUDE
-	db 17,ZUBAT
+	db 17,JYNX
 	db 19,ZUBAT
 	db 18,GEODUDE
 	db 20,GEODUDE

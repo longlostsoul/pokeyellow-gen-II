@@ -2,7 +2,7 @@ DungeonMonsB1:
 	db $19
 	db 54,GOLBAT
 	db 59,GOLBAT
-	db 55,GRAVELER
+	db 55,GOLEM
 	db 52,RHYHORN
 	db 62,RHYDON
 	db 60,DITTO

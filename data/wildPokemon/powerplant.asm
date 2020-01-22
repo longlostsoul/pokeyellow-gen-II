@@ -8,6 +8,6 @@ PowerPlantMons:
 	db 33,GRIMER
 	db 37,GRIMER
 	db 38,MAGNETON
-	db 33,MUK
+	db 33,ELECTABUZZ
 	db 37,MUK
 	db $00

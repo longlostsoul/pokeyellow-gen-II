@@ -1,9 +1,9 @@
 CaveMons:
 	db $14
-	db 18,DIGLETT
-	db 19,DIGLETT
-	db 17,DIGLETT
-	db 20,DIGLETT
+	db 18,EKANS
+	db 19,KOFFING
+	db 17,EKANS
+	db 20,KOFFING
 	db 16,DIGLETT
 	db 15,DIGLETT
 	db 21,DIGLETT

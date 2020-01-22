@@ -1,7 +1,7 @@
 Route2Mons:
 	db $19
 	db 3,RATTATA
-	db 3,PIDGEY
+	db 3,MANKEY
 	db 4,RATTATA
 	db 4,NIDORAN_M
 	db 4,NIDORAN_F

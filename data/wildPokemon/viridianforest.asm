@@ -1,13 +1,13 @@
 ForestMons:
 	db $19
-	db 3,CATERPIE
-	db 4,METAPOD
+	db 3,WEEDLE
+	db 7,KAKUNA
 	db 4,CATERPIE
-	db 5,CATERPIE
-	db 4,PIDGEY
-	db 6,PIDGEY
-	db 6,CATERPIE
-	db 6,METAPOD
+	db 9,BUTTERFREE
+	db 5,PIDGEY
+	db 6,VENONAT
+	db 9,BEEDRILL
+	db 7,METAPOD
 	db 8,PIDGEY
 	db 9,PIDGEOTTO
 	db $00

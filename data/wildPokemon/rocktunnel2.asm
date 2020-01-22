@@ -1,6 +1,6 @@
 TunnelMonsB2:
 	db $0F
-	db 20,ZUBAT
+	db 20,ELECTABUZZ
 	db 17,GEODUDE
 	db 18,MACHOP
 	db 21,ZUBAT
