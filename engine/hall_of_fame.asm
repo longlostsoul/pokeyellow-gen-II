@@ -197,8 +197,16 @@ HoFMonInfoText:
 	next "TYPE2/@"
 
 HoFLoadPlayerPics:
+  ld a, [wPlayerGender]
+  and a
+  jr nz,.Girl2
 	ld de, RedPicFront
 	ld a, BANK(RedPicFront)
+	jr .Routine2
+.Girl2
+ld de, LeafPicFront
+ld a, BANK(LeafPicFront)
+.Routine2
 	call UncompressSpriteFromDE
 	ld a,$0
 	call SwitchSRAMBankAndLatchClockData
@@ -209,8 +217,16 @@ HoFLoadPlayerPics:
 	call PrepareRTCDataAndDisableSRAM
 	ld de, vFrontPic
 	call InterlaceMergeSpriteBuffers
-	ld de, RedPicBack
-	ld a, BANK(RedPicBack)
+	  ld a, [wPlayerGender]
+  and a
+  jr nz,.Girl
+	ld de, RedPicFront
+	ld a, BANK(RedPicFront)
+	jr .Routine
+.Girl
+ld de, LeafPicFront
+ld a, BANK(LeafPicFront)
+.Routine
 	call UncompressSpriteFromDE
 	xor a
 	ld [wTrainerClass], a

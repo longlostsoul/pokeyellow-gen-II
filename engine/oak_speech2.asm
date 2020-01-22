@@ -19,10 +19,15 @@ ChoosePlayerName:
 	cp "@"
 	jr z, .customName
 	call ClearScreen
-	callba SendPlayerPal
 	call Delay3
 	ld de, RedPicFront
 	ld b, BANK(RedPicFront)
+	ld a, [wPlayerGender] ; check gender
+    and a      ; check gender
+    jr z, .NotLeaf1
+    ld de,LeafPicFront
+    ld b, BANK(LeafPicFront)
+.NotLeaf1:
 	call IntroDisplayPicCenteredOrUpperRight
 .done
 	ld hl, YourNameIsText
@@ -53,7 +58,6 @@ ChooseRivalName:
 	cp "@"
 	jr z, .customName
 	call ClearScreen
-	callba SendRivalPal
 	call Delay3
 	ld de, Rival1Pic
 	ld b, $13
@@ -193,7 +197,7 @@ DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "YELLOW"
 	next "ASH"
-	next "JACK"
+	next "ASHLEY"
 	db   "@"
 
 DefaultNamesRival:
@@ -231,7 +235,7 @@ DefaultNamesPlayerList:
 	db "NEW NAME@"
 	db "YELLOW@"
 	db "ASH@"
-	db "JACK@"
+	db "ASHLEY@"
 
 DefaultNamesRivalList:
 	db "NEW NAME@"

@@ -394,12 +394,28 @@ FishingAnim:
 	ld hl, wd736
 	set 6, [hl] ; reserve the last 4 OAM entries
 	ld hl, vNPCSprites
+	ld a, [wPlayerGender] ; check gender
+	and a      ; check gender
+	jr z, .BoySprite
+	ld de, LeafSprite
+	ld b, BANK(LeafSprite)
+	jr .KeepLoading
+.BoySprite
 	ld de, RedSprite
 	ld b, BANK(RedSprite)
+.KeepLoading
 	ld c, $c
 	call CopyVideoData
+	ld a, [wPlayerGender] ; check gender
+	and a      ; check gender
+	jr z, .BoyTiles
+	ld a, $4
+	ld hl,LeafFishingTiles
+	jr .Contin
+.BoyTiles
 	ld a, $4
 	ld hl, RedFishingTiles
+.Contin
 	call LoadAnimSpriteGfx
 	ld a, [wSpriteStateData1 + 2]
 	ld c, a
@@ -509,6 +525,25 @@ RedFishingTiles:
 	dw RedFishingRodTiles
 	db 3, BANK(RedFishingRodTiles)
 	dw vNPCSprites2 + $7d0
+
+LeafFishingTiles:
+	dw LeafFishingTilesFront
+	db 2, BANK(LeafFishingTilesFront)
+	dw vNPCSprites + $20
+
+	dw LeafFishingTilesBack
+	db 2, BANK(LeafFishingTilesBack)
+	dw vNPCSprites + $60
+
+	dw LeafFishingTilesSide
+	db 2, BANK(LeafFishingTilesSide)
+	dw vNPCSprites + $a0
+
+	dw RedFishingRodTiles
+	db 3, BANK(RedFishingRodTiles)
+	dw vNPCSprites2 + $7d0
+
+
 
 _HandleMidJump:
 	ld a, [wPlayerJumpingYScreenCoordsIndex]

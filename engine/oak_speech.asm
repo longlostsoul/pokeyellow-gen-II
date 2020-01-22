@@ -51,7 +51,7 @@ OakSpeech:
 	call SetDefaultNames
 	predef InitPlayerData2
 	ld hl,wNumBoxItems
-	ld a,POTION
+	ld a,THUNDER_STONE
 	ld [wcf91],a
 	ld a,1
 	ld [wItemQuantity],a
@@ -63,8 +63,16 @@ OakSpeech:
 	ld [hTilesetType],a
 	ld a,[wd732]
 	bit 1,a ; possibly a debug mode bit
-	jp nz,.skipChoosingNames
-	callba SendOakPal
+	jp nz,.skipChoosingNames ;easter egg skip intro
+	
+	ld hl,BoyGirlText  ; added to the same file as the other oak text
+    call PrintText     ; show this text
+    call BoyGirlChoice ; added routine at the end of this file
+    ld a, [wCurrentMenuItem]
+    ld [wPlayerGender], a ;store
+
+    call ClearScreen ; clear the screen before resuming normal intro
+	
 	ld de,ProfOakPic
 	lb bc, Bank(ProfOakPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -73,7 +81,6 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-	callba SendPikaPal
 	ld a,PIKACHU
 	ld [wd0b5],a
 	ld [wcf91],a
@@ -81,20 +88,26 @@ OakSpeech:
 	coord hl, 6, 4
 	call LoadFlippedFrontSpriteByMonIndex
 	call MovePicLeft
+	
 	ld hl,OakSpeechText2
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-	callba SendPlayerPal
 	ld de,RedPicFront
 	lb bc, Bank(RedPicFront), $00
+	
+	ld a, [wPlayerGender] ; check gender
+	and a      ; check gender
+    jr z, .NotLeaf11
+    ld de,LeafPicFront
+    lb bc, Bank(LeafPicFront), $00
+.NotLeaf11
 	call IntroDisplayPicCenteredOrUpperRight
 	call MovePicLeft
 	ld hl,IntroducePlayerText
 	call PrintText
 	call ChoosePlayerName
 	call GBFadeOutToWhite
-	callba SendRivalPal
 	call ClearScreen
 	ld de,Rival1Pic
 	lb bc, Bank(Rival1Pic), $00
@@ -106,9 +119,15 @@ OakSpeech:
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen
-	callba SendPlayerPal
 	ld de,RedPicFront
 	lb bc, Bank(RedPicFront), $00
+	
+	ld a, [wPlayerGender] ; check gender
+	and a      ; check gender
+    jr z, .NotLeaf2
+    ld de,LeafPicFront
+    lb bc, Bank(LeafPicFront), $00
+.NotLeaf2
 	call IntroDisplayPicCenteredOrUpperRight
 	call GBFadeInFromWhite
 	ld a,[wd72d]
@@ -128,6 +147,13 @@ OakSpeech:
 	ld hl,vSprites
 	ld de,RedSprite
 	ld b, BANK(RedSprite)
+	
+	ld a, [wPlayerGender] ; check gender
+	and a      ; check gender
+    jr z, .NotLeaf3
+    ld de,LeafSprite
+    ld b, BANK(LeafSprite)
+.NotLeaf3
 	ld c, $0C
 	call CopyVideoData
 	ld de,ShrinkPic1
@@ -180,6 +206,10 @@ IntroduceRivalText:
 OakSpeechText3:
 	TX_FAR _OakSpeechText3
 	db "@"
+BoyGirlText: ; This is new so we had to add a reference to get it to compile
+	TX_FAR _BoyGirlText
+	db "@"
+	
 
 FadeInIntroPic:
 	ld hl,IntroFadePalettes
@@ -247,3 +277,22 @@ IntroDisplayPicCenteredOrUpperRight:
 	xor a
 	ld [hStartTileID],a
 	predef_jump CopyUncompressedPicToTilemap
+
+; displays boy/girl choice
+BoyGirlChoice::
+    call SaveScreenTilesToBuffer1
+    call InitBoyGirlTextBoxParameters
+    jr DisplayBoyGirlChoice
+    
+InitBoyGirlTextBoxParameters::
+    ld a, $1 ; loads the value for the unused North/West choice, that was changed to say Boy/Girl
+    ld [wTwoOptionMenuID], a
+    coord hl, 11, 7 
+    ld bc, $80c
+    ret
+    
+DisplayBoyGirlChoice::
+    ld a, $14
+    ld [wTextBoxID], a
+    call DisplayTextBoxID
+    jp LoadScreenTilesFromBuffer1

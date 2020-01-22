@@ -166,7 +166,7 @@ TextBoxTextAndCoordTable:
 	db 3,0   ; text coordinates
 
 	db USE_TOSS_MENU_TEMPLATE
-	db 13,10,19,14 ; text box coordinates
+	db 13,10,19,16 ; text box coordinates
 	dw UseTossText
 	db 15,11 ; text coordinates
 
@@ -222,8 +222,9 @@ BuySellQuitText:
 	next "SELL"
 	next "QUIT@@"
 
-UseTossText:
+UseTossText: 
 	db   "USE"
+	;next "GIVE";where I put my hold item text for bag. not currently in use
 	next "TOSS@"
 
 JapaneseSaveMessageText:
@@ -498,7 +499,7 @@ TwoOptionMenuStrings:
 	db 4,3,0
 	dw .YesNoMenu
 	db 6,3,0
-	dw .NorthWestMenu
+	dw .BoyGirlMenu
 	db 6,3,0
 	dw .SouthEastMenu
 	db 6,3,0
@@ -512,21 +513,21 @@ TwoOptionMenuStrings:
 	db 4,3,0
 	dw .NoYesMenu
 
-.NoYesMenu ; 7542 (1:7542)
+.NoYesMenu
 	db "NO",$4E,"YES@"
-.YesNoMenu ; 7549 (1:7549)
+.YesNoMenu
 	db "YES",$4E,"NO@"
-.NorthWestMenu ; 7550 (1:7550)
-	db "NORTH",$4E,"WEST@"
-.SouthEastMenu ; 755b (1:755b)
+.BoyGirlMenu
+	db "Boy",$4E,"Girl@"
+.SouthEastMenu
 	db "SOUTH",$4E,"EAST@"
-.NorthEastMenu ; 7566 (1:7566)
+.NorthEastMenu
 	db "NORTH",$4E,"EAST@"
-.TradeCancelMenu ; 7571 (1:7571)
+.TradeCancelMenu
 	db "TRADE",$4E,"CANCEL@"
-.HealCancelMenu ; 757e (1:757e)
+.HealCancelMenu
 	db "HEAL",$4E,"CANCEL@"
-
+	
 DisplayFieldMoveMonMenu:
 	xor a
 	ld hl, wFieldMoves
