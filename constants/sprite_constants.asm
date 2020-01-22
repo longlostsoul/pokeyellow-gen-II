@@ -1,4 +1,4 @@
-; pokemon's overworld sprites
+; pokemon's menu sprites
 const_value = 0
 
 	const SPRITE_MON              ; $0
@@ -12,6 +12,7 @@ const_value = 0
 	const SPRITE_SNAKE            ; $8
 	const SPRITE_QUADRUPED        ; $9
 	const SPRITE_PIKACHU_FAMILY   ; $A
+
 ; overworld sprites
 const_value = 1
 
@@ -45,7 +46,7 @@ const_value = 1
 	const SPRITE_MOM_GEISHA                ; $1c
 	const SPRITE_BRUNETTE_GIRL             ; $1d
 	const SPRITE_LANCE                     ; $1e
-	const SPRITE_UNUSED_1                  ; $1f
+	const SPRITE_RAICHU;SPRITE_UNUSED_1                  ; $1f
 	const SPRITE_OAK_AIDE                  ; $20
 	const SPRITE_ROCKER                    ; $21
 	const SPRITE_SWIMMER                   ; $22
@@ -64,11 +65,11 @@ const_value = 1
 	const SPRITE_FISHER2                   ; $2f
 	const SPRITE_BLACKBELT                 ; $30
 	const SPRITE_GUARD                     ; $31
-	const SPRITE_UNUSED_2                  ; $32
+	const SPRITE_SQUIRTLE;SPRITE_UNUSED_2                  ; $32
 	const SPRITE_MOM                       ; $33
 	const SPRITE_BALDING_GUY               ; $34
 	const SPRITE_YOUNG_BOY                 ; $35
-	const SPRITE_UNUSED_3                  ; $36
+	const SPRITE_CHARMANDER;SPRITE_UNUSED_3                  ; $36
 	const SPRITE_GAMEBOY_KID               ; $37
 	const SPRITE_CLEFAIRY                  ; $38
 	const SPRITE_AGATHA                    ; $39
@@ -81,12 +82,12 @@ const_value = 1
 	const SPRITE_ODDISH                    ; $40
 	const SPRITE_BULBASAUR                 ; $41
 	const SPRITE_JIGGLYPUFF                ; $42
-	const SPRITE_CLEFAIRY_2                ; $43
+	const SPRITE_SNAKE2                ; $43 dratini or maybe ekans
 	const SPRITE_CHANSEY                   ; $44
 	const SPRITE_JESSIE                    ; $45
 	const SPRITE_JAMES                     ; $46
 
-	; 4-tile sprites
+	; 4-tile sprites?
 	const SPRITE_BALL                      ; $47
 	const SPRITE_OMANYTE                   ; $48
 	const SPRITE_BOULDER                   ; $49
@@ -94,11 +95,22 @@ const_value = 1
 	const SPRITE_BOOK_MAP_DEX              ; $4b
 	const SPRITE_CLIPBOARD                 ; $4c
 	const SPRITE_SNORLAX                   ; $4d
-	const SPRITE_OLD_AMBER_COPY            ; $4e
+	const SPRITE_MEOWTH            ; $4e
 	const SPRITE_OLD_AMBER                 ; $4f
-	const SPRITE_LYING_OLD_MAN_UNUSED_1    ; $50
-	const SPRITE_LYING_OLD_MAN_UNUSED_2    ; $51
+	const SPRITE_BUTTERFREE    ; $50
+	const SPRITE_EEVEE    ; $51
 	const SPRITE_LYING_OLD_MAN             ; $52
+	const SPRITE_DOG
+	const SPRITE_FISH
+	const SPRITE_PERSIAN
+	const SPRITE_DRAGON
+	const SPRITE_GEODUDE
+	const SPRITE_GHOST
+	const SPRITE_DITTO
+	const SPRITE_ZUBAT
+	const SPRITE_GYARADOS
+	const SPRITE_LAPRAS
+	
 
 ; different kinds of people events
 ITEM    EQU $80

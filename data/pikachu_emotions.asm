@@ -4,25 +4,41 @@ PikachuEmotion0:
 PikachuEmotion2:
 	pikaemotion_dummy2
 	pikaemotion_emotebubble SMILE_BUBBLE
-	pikaemotion_pcm PikachuCry35
-	pikaemotion_pikapic PikaPicAnimScript2
+	pikaemotion_pcm PikachuCry5;35
+	pikaemotion_pikapic PikaPicAnimScript2 ;arms raised happy. evolve around this time maybe?
 	db $ff
 
+
+PikachuEmotionSkull:
+	pikaemotion_dummy2
+	pikaemotion_emotebubble SKULL_BUBBLE
+	db $ff
+
+PikachuEmotionSmile:
+	pikaemotion_dummy2
+	pikaemotion_emotebubble SMILE_BUBBLE
+	db $ff
+	
+PikachuEmotionHeart:
+	pikaemotion_dummy2
+	pikaemotion_emotebubble HEART_BUBBLE
+	db $ff
+	
 PikachuEmotion10:
 	pikaemotion_dummy2
 	pikaemotion_subcmd PIKAEMOTION_SUBCMD_LOADEXTRAPIKASPRITES
 	pikaemotion_emotebubble HEART_BUBBLE
 	pikaemotion_pcm PikachuCry5
-	pikaemotion_pikapic PikaPicAnimScript10
+	pikaemotion_pikapic PikaPicAnimScript10 ;one heart
 	db $ff
 
 PikachuEmotion7:
 	pikaemotion_dummy2
 	pikaemotion_subcmd PIKAEMOTION_SUBCMD_LOADEXTRAPIKASPRITES
 	pikaemotion_movement PikachuMovementData_fd224
-	pikaemotion_pcm PikachuCry1
+	pikaemotion_pcm PikachuCry1 ;now raichu cry?
 	pikaemotion_movement PikachuMovementData_fd224
-	pikaemotion_pikapic PikaPicAnimScript7
+	pikaemotion_pikapic PikaPicAnimScript7 ;jumps up and down. evolve around now?
 	db $ff
 
 PikachuEmotion4:
@@ -30,11 +46,11 @@ PikachuEmotion4:
 	pikaemotion_subcmd PIKAEMOTION_SUBCMD_LOADEXTRAPIKASPRITES
 	pikaemotion_movement PikachuMovementData_fd230
 	pikaemotion_pcm PikachuCry29
-	pikaemotion_pikapic PikaPicAnimScript4
+	pikaemotion_pikapic PikaPicAnimScript4 ;happy jump.
 	db $ff
 
 PikachuEmotion1:
-	pikaemotion_dummy2
+	pikaemotion_dummy2 ;content pikachu
 	pikaemotion_pcm
 	pikaemotion_pikapic PikaPicAnimScript1
 	db $ff
@@ -66,7 +82,7 @@ PikachuEmotion3:
 	pikaemotion_pikapic PikaPicAnimScript3
 	db $ff
 
-PikachuEmotion9:
+PikachuEmotion9: ;hates you
 	pikaemotion_dummy2
 	pikaemotion_subcmd PIKAEMOTION_SUBCMD_LOADEXTRAPIKASPRITES
 	pikaemotion_pcm PikachuCry6
@@ -104,7 +120,7 @@ PikachuEmotion14:
 PikachuEmotion15:
 	pikaemotion_dummy2
 	pikaemotion_pcm PikachuCry34
-	pikaemotion_pikapic PikaPicAnimScript15
+	pikaemotion_pikapic PikaPicAnimScript15 ;fist raised wink.
 	db $ff
 
 PikachuEmotion16:
@@ -116,7 +132,7 @@ PikachuEmotion16:
 PikachuEmotion17:
 	pikaemotion_dummy2
 	pikaemotion_pcm PikachuCry13
-	pikaemotion_pikapic PikaPicAnimScript17
+	pikaemotion_pikapic PikaPicAnimScript17 ;eyes closed unhappy. make this unhappy raichu?
 	db $ff
 
 PikachuEmotion18:
@@ -128,7 +144,7 @@ PikachuEmotion18:
 PikachuEmotion19:
 	pikaemotion_dummy2
 	pikaemotion_emotebubble HEART_BUBBLE
-	pikaemotion_pcm PikachuCry33
+	pikaemotion_pcm PikachuCry1;PikachuCry33
 	pikaemotion_pikapic PikaPicAnimScript19
 	db $ff
 
@@ -163,7 +179,7 @@ PikachuEmotion24:
 	pikaemotion_dummy2
 	pikaemotion_emotebubble EXCLAMATION_BUBBLE
 	pikaemotion_pcm
-	pikaemotion_pikapic PikaPicAnimScript24
+	;pikaemotion_pikapic PikaPicAnimScript24
 	db $ff
 
 PikachuEmotion25:

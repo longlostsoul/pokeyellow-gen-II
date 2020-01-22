@@ -240,6 +240,9 @@ pikaemotion_def: MACRO
 	pikaemotion_def PikachuEmotion31
 	pikaemotion_def PikachuEmotion32
 	pikaemotion_def PikachuEmotion33
+	pikaemotion_def PikachuEmotionSkull
+	pikaemotion_def PikachuEmotionSmile
+	pikaemotion_def PikachuEmotionHeart
 	
 PikachuEmotion33:
 	db $ff
@@ -251,10 +254,10 @@ MapSpecificPikachuExpression:
 	ld hl, wd492
 	bit 7, [hl]
 	ldpikaemotion a, PikachuEmotion29
-	jr z, .play_emotion
+	jr z, .play_emotion2
 	call CheckPikachuFollowingPlayer
 	ldpikaemotion a, PikachuEmotion30
-	jr nz, .play_emotion
+	jr nz, .play_emotion2
 	jr .check_pikachu_status
 
 .notFanClub
@@ -263,17 +266,43 @@ MapSpecificPikachuExpression:
 	jr nz, .notPewterPokecenter
 	call CheckPikachuFollowingPlayer
 	ldpikaemotion a, PikachuEmotion26
-	jr nz, .play_emotion
+	jr nz, .play_emotion2
 	jr .check_pikachu_status
 
 .notPewterPokecenter
 	callab Func_f24ae
 	ld a, e
 	cp $ff
-	jr nz, .play_emotion
+	jr nz, .play_emotion2
 	jr .check_pikachu_status ; useless
+.play_emotion2
+  scf
+  ret
 
 .check_pikachu_status
+  call IsPikachuFirst
+  cp 25
+  jr z, .Pika
+  call FirstPartymonHappy
+  cp 1
+  jr nc, .content ;bigger than
+  ldpikaemotion a, PikachuEmotionSkull
+  jr .play_emotion
+.content
+  cp 10
+  jr nc, .happy
+  ldpikaemotion a, PikachuEmotion24;PikachuEmotion5 unhappy,28 status,29 exuberant heart 8 happy, 1 content, 32 confused, 27 shocked, 26 zz wakeup, 25 used attack, 24 exclaim.
+  jr .justlilhappy
+.happy
+  cp 30
+  jr nc, .happy2
+  ldpikaemotion a, PikachuEmotionSmile;PikachuEmotion5 unhappy,28 status,29 exuberant heart 8 happy, 1 content, 32 confused, 27 shocked, 26 zz wakeup, 25 used attack, 24 exclaim.
+  jr .justlilhappy
+.happy2
+  ldpikaemotion a, PikachuEmotionHeart
+.justlilhappy
+	jr .play_emotion
+.Pika 
 	call IsPlayerPikachuAsleepInParty
 	ldpikaemotion a, PikachuEmotion11
 	jr c, .play_emotion
@@ -325,8 +354,13 @@ IsPlayerPikachuAsleepInParty:
 	ld a, [hl]
 	cp $ff
 	jr z, .done
+	cp RAICHU
+	jr nz, .isitpika
+	jr .okitis
+.isitpika
 	cp PIKACHU
 	jr nz, .curMonNotStarterPikachu
+.okitis
 	callab IsThisPartymonStarterPikachu
 	jr nc, .curMonNotStarterPikachu
 	ld a, [wWhichPokemon]
@@ -370,6 +404,9 @@ PikachuWalksToNurseJoy:
 	ret
 
 .GetMovementData:
+  call IsPikachuFirst
+  cp 25
+  jr nz, .pikachu_above_player ;make it skip?
 	ld a, [wPikachuMapY]
 	ld e, a
 	ld a, [wPikachuMapX]

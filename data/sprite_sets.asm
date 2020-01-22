@@ -83,7 +83,7 @@ SpriteSets:
 	db SPRITE_LASS
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_EEVEE
 
 ; sprite set $03
 	db SPRITE_PIKACHU
@@ -96,7 +96,7 @@ SpriteSets:
 	db SPRITE_LASS
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_EEVEE
 
 ; sprite set $04
 	db SPRITE_PIKACHU
@@ -109,7 +109,7 @@ SpriteSets:
 	db SPRITE_LASS
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_EEVEE
 
 ; sprite set $05
 	db SPRITE_PIKACHU
@@ -135,7 +135,7 @@ SpriteSets:
 	db SPRITE_GUARD
 	db SPRITE_GAMBLER
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_EEVEE
 
 ; sprite set $07
 	db SPRITE_PIKACHU
@@ -148,7 +148,7 @@ SpriteSets:
 	db SPRITE_ROCKER
 	db SPRITE_BLACK_HAIR_BOY_1
 	db SPRITE_BALL
-	db SPRITE_LYING_OLD_MAN_UNUSED_2
+	db SPRITE_EEVEE
 
 ; sprite set $08
 	db SPRITE_PIKACHU
@@ -340,10 +340,10 @@ SpriteSheetPointerTable:
 	db $c0 ; byte count
 	db BANK(LanceSprite)
 
-	; SPRITE_UNUSED_1
-	dw RedSprite
+	; SPRITE_UNUSED_1 RAICHU
+	dw RaichuSprite
 	db $c0 ; byte count
-	db BANK(RedSprite)
+	db BANK(RaichuSprite)
 
 	; SPRITE_OAK_AIDE
 	dw OakAideSprite
@@ -436,9 +436,9 @@ SpriteSheetPointerTable:
 	db BANK(GuardSprite)
 
 	; SPRITE_UNUSED_2
-	dw RedSprite
+	dw SquirtleSprite
 	db $c0 ; byte count
-	db BANK(RedSprite)
+	db BANK(SquirtleSprite)
 
 	; SPRITE_MOM
 	dw MomSprite
@@ -456,9 +456,9 @@ SpriteSheetPointerTable:
 	db BANK(YoungBoySprite)
 
 	; SPRITE_UNUSED_3
-	dw RedSprite
+	dw CharmanderSprite
 	db $c0 ; byte count
-	db BANK(RedSprite)
+	db BANK(CharmanderSprite)
 
 	; SPRITE_GAMEBOY_KID
 	dw GameboyKidSprite
@@ -489,7 +489,10 @@ SpriteSheetPointerTable:
 	dw SeelSprite
 	db $c0 ; byte count
 	db BANK(SeelSprite)
-
+	;dw FishSprite
+	;db $c0 ; byte count
+	;db BANK(FishSprite)
+	
 	; SPRITE_PIKACHU
 	dw PikachuSprite
 	db $c0
@@ -520,10 +523,10 @@ SpriteSheetPointerTable:
 	db $c0
 	db BANK(JigglypuffSprite)
 
-	; SPRITE_CLEFAIRY_2
-	dw Clefairy2Sprite
+	; 
+	dw SnakeSprite;Clefairy2Sprite
 	db $c0
-	db BANK(Clefairy2Sprite)
+	db BANK(SnakeSprite)
 
 	; SPRITE_CHANSEY
 	dw ChanseySprite
@@ -541,9 +544,9 @@ SpriteSheetPointerTable:
 	db BANK(JamesSprite)
 
 	; SPRITE_BALL
-	dw BallSprite
-	db $40 ; byte count
-	db BANK(BallSprite)
+	dw BallpokeSprite
+	db $c0 ; byte count
+	db BANK(BallpokeSprite)
 
 	; SPRITE_OMANYTE
 	dw OmanyteSprite
@@ -576,9 +579,9 @@ SpriteSheetPointerTable:
 	db BANK(SnorlaxSprite)
 
 	; SPRITE_OLD_AMBER_COPY
-	dw OldAmberSprite
-	db $40 ; byte count
-	db BANK(OldAmberSprite)
+	dw MeowthSprite
+	db $c0 ; byte count
+	db BANK(MeowthSprite)
 
 	; SPRITE_OLD_AMBER
 	dw OldAmberSprite
@@ -586,16 +589,56 @@ SpriteSheetPointerTable:
 	db BANK(OldAmberSprite)
 
 	; SPRITE_LYING_OLD_MAN_UNUSED_1
-	dw LyingOldManSprite
-	db $40 ; byte count
-	db BANK(LyingOldManSprite)
+	dw BugSprite
+	db $c0 ; byte count
+	db BANK(BugSprite)
 
 	; SPRITE_LYING_OLD_MAN_UNUSED_2
-	dw LyingOldManSprite
-	db $40 ; byte count
-	db BANK(LyingOldManSprite)
+	dw EeveeSprite
+	db $c0 ; byte count
+	db BANK(BugSprite)
 
 	; SPRITE_LYING_OLD_MAN
 	dw LyingOldManSprite
 	db $40 ; byte count
 	db BANK(LyingOldManSprite)
+	
+	dw RedCyclingSprite
+	db $c0 ; byte count
+	db BANK(RedCyclingSprite)
+	
+	dw FishSprite
+	db $c0 ; byte count
+	db BANK(FishSprite)
+
+	dw PersianSprite
+	db $c0 ; byte count
+	db BANK(PersianSprite)
+
+	dw DragonSprite
+	db $c0 ; byte count
+	db BANK(DragonSprite)
+	
+	dw GeodudeSprite
+	db $c0 ; byte count
+	db BANK(GeodudeSprite)
+	
+	dw GhostSprite
+	db $c0 ; byte count
+	db BANK(GhostSprite)
+	
+	dw DittoSprite
+	db $c0 ; byte count
+	db BANK(DittoSprite)
+	
+	dw ZubatSprite
+	db $c0 ; byte count
+	db BANK(ZubatSprite)
+	
+	dw GyaradosSprite
+	db $c0 ; byte count
+	db BANK(GyaradosSprite)
+	
+	dw LaprasSprite
+	db $c0 ; byte count
+	db BANK(LaprasSprite)

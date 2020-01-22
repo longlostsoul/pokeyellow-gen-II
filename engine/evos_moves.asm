@@ -104,10 +104,21 @@ Evolution_PartyMonLoop: ; loop over party mons
 	cp b ; was the evolution item in this entry used?
 	jp nz, .nextEvoEntry1 ; if not, go to the next evolution entry
 .checkLevel
+;make pikachu evolve by level, but only if happy?
+  ld [hl], c
+  ld a, [wEvoOldSpecies]
+	cp PIKACHU
+  jr nz, .CheckL
+  ;160 is happiness level you have when you get to arms raised pikachu. I think?
+  ld a, [wPikachuHappiness]
+  cp 160
+  jp c, .nextEvoEntry2 ; if so, go the next evolution entry?
+  jp c, .doEvolution ;test, has to be jp c to work right.
+.CheckL
 	ld a, [hli] ; level requirement
 	ld b, a
 	ld a, [wLoadedMonLevel]
-	cp b ; is the mon's level greater than the evolution requirement?
+	cp b ; is the mon's level less than the evolution requirement?
 	jp c, .nextEvoEntry2 ; if so, go the next evolution entry
 .doEvolution
 	ld [wCurEnemyLVL], a
@@ -330,15 +341,18 @@ LearnMoveFromLevelUp:
 	ld a, [hli]
 	and a ; have we reached the end of the learn set?
 	jr z, .done ; if we've reached the end of the learn set, jump
+	
 	ld b, a ; level the move is learnt at
 	ld a, [wCurEnemyLVL]
 	cp b ; is the move learnt at the mon's current level?
 	ld a, [hli] ; move ID
 	jr nz, .learnSetLoop
+	
+	push hl
 	ld d, a ; ID of move to learn
-	ld a, [wMonDataLocation]
-	and a
-	jr nz, .next
+	;ld a, [wMonDataLocation]
+	;and a
+	;jr nz, .next
 ; If [wMonDataLocation] is 0 (PLAYER_PARTY_DATA), get the address of the mon's
 ; current moves in party data. Every call to this function sets
 ; [wMonDataLocation] to 0 because other data locations are not supported.
@@ -347,14 +361,15 @@ LearnMoveFromLevelUp:
 	ld a, [wWhichPokemon]
 	ld bc, wPartyMon2 - wPartyMon1
 	call AddNTimes
-.next
+;.next
 	ld b, NUM_MOVES
 .checkCurrentMovesLoop ; check if the move to learn is already known
 	ld a, [hli]
 	cp d
-	jr z, .done ; if already known, jump
+	jr z, .has_move ;.done if already known, jump
 	dec b
 	jr nz, .checkCurrentMovesLoop
+	;learn
 	ld a, d
 	ld [wMoveNum], a
 	ld [wd11e], a
@@ -363,6 +378,9 @@ LearnMoveFromLevelUp:
 	predef LearnMove
 	ld a, b
 	and a
+.has_move
+  pop hl
+  jr .learnSetLoop
 	jr z, .done
 	callab IsThisPartymonStarterPikachu_Party
 	jr nc, .done
@@ -664,5 +682,102 @@ GetMonLearnset:
 	and a ; have we reached the end of the evolution data?
 	jr nz, .skipEvolutionDataLoop ; if not, jump back up
 	ret
+
+PrepareRelearnableMoveList:
+; Loads relearnable move list to wRelearnableMoves.
+; Input: party mon index = [wWhichPokemon]
+	; Get mon id.
+	ld a, [wWhichPokemon]
+	ld c, a
+	ld b, 0
+	ld hl, wPartySpecies
+	add hl, bc
+	ld a, [hl] ; a = mon id
+	; Get pointer to evos moves data.
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, EvosMovesPointerTable
+	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a  ; hl = pointer to evos moves data for our mon
+	push hl
+	; Get pointer to mon's currently-known moves.
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMon1Level
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
+	ld a, [hl]
+	ld b, a
+	ld [wCurEnemyLVL],a
+	push bc
+	ld a, [wWhichPokemon]
+	ld hl, wPartyMon1Moves
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
+	pop bc
+	ld d, h
+	ld e, l
+	pop hl
+	; Skip over evolution data.
+.skipEvoEntriesLoop
+	ld a, [hli]
+	and a
+	jr nz, .skipEvoEntriesLoop
+	; Write list of relearnable moves, while keeping count along the way.
+	; de = pointer to mon's currently-known moves
+	; hl = pointer to moves data for our mon
+	;  b = mon's level
+	ld c, 0 ; c = count of relearnable moves
+
+.learnSetLoop ; loop over the learn set until we reach a move that is learnt at the current level or the end of the list
+	ld a, [hli]
+	and a ; have we reached the end of the learn set?
+	jr z, .done ; if we've reached the end of the learn set, jump
+	ld b, a ; level the move is learnt at
+	ld a, [wCurEnemyLVL]
+	cp b ; is the move learnt at the mon's current level?
+	ld a, [hli] ; move ID
+	jr c, .learnSetLoop
+	
+	push hl
+	ld d, a ; ID of move to learn
+	ld hl, wPartyMon1Moves
+	ld a, [wWhichPokemon]
+	ld bc, wPartyMon2 - wPartyMon1
+	call AddNTimes
+
+	ld b, NUM_MOVES
+.checkCurrentMovesLoop ; check if the move to learn is already known
+	ld a, [hli]
+	cp d
+	jr z, .has_move ; if already known, jump
+	dec b
+	jr nz, .checkCurrentMovesLoop
+;learn move
+	ld a, d
+	ld [wMoveNum], a
+	ld [wd11e], a
+	call GetMoveName
+	call CopyStringToCF4B
+	predef LearnMove
+.has_move
+	pop hl
+	jr .learnSetLoop
+	
+.done
+
+	;ld b, 0
+	;ld hl, wLastFieldMoveID + 1
+	;add hl, bc
+	;ld a, $ff
+	;ld [hl], a
+	;ld hl, wLastFieldMoveID
+	;ld [hl], c
+	;call PrepareRelearnableBaseMoves
+	ret
+	
 
 INCLUDE "data/evos_moves.asm"

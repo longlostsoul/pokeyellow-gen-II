@@ -1,6 +1,8 @@
 GetPikaPicAnimationScriptIndex:
 	ld hl, PikachuMoodLookupTable
 	ld a, [wPikachuMood]
+	;ld a, 250
+	;ld [wPikachuMood],a
 	ld d, a
 .get_mood_param
 	ld a, [hli]
@@ -11,6 +13,8 @@ GetPikaPicAnimationScriptIndex:
 	ld e, [hl]
 	ld hl, PikaPicAnimationScriptPointerLookupTable
 	ld a, [wPikachuHappiness]
+	;ld a, 250 ;can override if we want for testing
+	;ld [wPikachuHappiness],a
 	ld d, a
 	ld bc, 6
 .get_happiness_param
@@ -104,7 +108,7 @@ StarterPikachuEmotionCommand_pikapic:
 
 .RunPikapic:
 	call PlacePikapicTextBoxBorder
-	callab LoadOverworldPikachuFrontpicPalettes
+	callab LoadOverworldPikachuFrontpicPalettes;may want to knock out for nightday
 	call ResetPikaPicAnimBuffer
 	call LoadCurrentPikaPicAnimScriptPointer
 	call ExecutePikaPicAnimScript

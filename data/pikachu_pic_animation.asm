@@ -22,9 +22,11 @@ PikaPicAnimThunderboltPals:
 	db $ff
 
 Data_fe26b:
-	pikapic_loadgfx Pic_e4000
-	pikapic_loadgfx Pic_e49d1
+	pikapic_loadgfx Pic_e4000 ;neutral happy smile closed
+	pikapic_loadgfx Pic_e49d1 ;happy smile mouth open
 	pikapic_loadgfx PikachuSprite
+  ;pikapic_loadgfx RaichuSprite
+.nope
 	pikapic_animation PikaPicAnimBGFrames_1, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_2, $b2, $5, $5
 	pikapic_animation PikaPicAnimBGFrames_3, $b6, $5, $5
@@ -36,8 +38,8 @@ PikaPicAnimScript0:
 PikaPicAnimScript1:
 PikaPicAnimScript29:
 	pikapic_setduration 40
-	pikapic_loadgfx Pic_e4000
-	pikapic_loadgfx GFX_e40cc
+	pikapic_loadgfx Pic_e4000 ;smile
+	pikapic_loadgfx GFX_e40cc ;tail shift, ears, close eyes.
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_6, $99, $0, $0
 	pikapic_waitbgmap
@@ -46,8 +48,8 @@ PikaPicAnimScript29:
 
 PikaPicAnimScript2:
 	pikapic_setduration 44
-	pikapic_loadgfx Pic_e411c
-	pikapic_loadgfx GFX_e41d2
+	pikapic_loadgfx Pic_e411c ;both arms raised triumph
+	pikapic_loadgfx GFX_e41d2 ;mouth closes
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_7, $99, $0, $0
 	pikapic_waitbgmap
@@ -56,8 +58,8 @@ PikaPicAnimScript2:
 
 PikaPicAnimScript3:
 	pikapic_setduration 80
-	pikapic_loadgfx Pic_e4272
-	pikapic_loadgfx GFX_e4323
+	pikapic_loadgfx Pic_e4272 ;grumpy!
+	pikapic_loadgfx GFX_e4323 ;ear
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_8, $99, $0, $0
 	pikapic_waitbgmap
@@ -66,8 +68,8 @@ PikaPicAnimScript3:
 
 PikaPicAnimScript4:
 	pikapic_setduration 70
-	pikapic_loadgfx Pic_e4383
-	pikapic_loadgfx GFX_e444b
+	pikapic_loadgfx Pic_e4383 ;happy, eyes closed
+	pikapic_loadgfx GFX_e444b ;jump up, eyes open, right ear flick side
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_9, $99, $0, $0
 	pikapic_waitbgmap
@@ -76,7 +78,7 @@ PikaPicAnimScript4:
 
 PikaPicAnimScript5:
 	pikapic_setduration 32
-	pikapic_loadgfx Pic_e458b
+	pikapic_loadgfx Pic_e458b ;ticked show ear flick, annoyed pika
 	pikapic_loadgfx GFX_e463b
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_10, $99, $0, $0
@@ -84,9 +86,9 @@ PikaPicAnimScript5:
 	pikapic_cry
 	pikapic_looptofinish
 
-PikaPicAnimScript6:
+PikaPicAnimScript6: ;Pikachu dislikes you?
 	pikapic_setduration 50
-	pikapic_loadgfx Pic_e467b
+	pikapic_loadgfx Pic_e467b ; face turned to side
 	pikapic_loadgfx GFX_e472e
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_11, $99, $0, $0
@@ -96,7 +98,7 @@ PikaPicAnimScript6:
 
 PikaPicAnimScript7:
 	pikapic_setduration 58
-	pikapic_loadgfx Pic_e476e
+	pikapic_loadgfx Pic_e476e ;jump with jump effect
 	pikapic_loadgfx GFX_e4841
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_12, $99, $0, $0
@@ -106,7 +108,7 @@ PikaPicAnimScript7:
 
 PikaPicAnimScript8:
 	pikapic_setduration 44
-	pikapic_loadgfx Pic_e49d1
+	pikapic_loadgfx Pic_e49d1 ;happy mouth open
 	pikapic_loadgfx GFX_e4a99
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_13, $99, $0, $0
@@ -116,7 +118,7 @@ PikaPicAnimScript8:
 
 PikaPicAnimScript9:
 	pikapic_setduration 56
-	pikapic_loadgfx Pic_e4b39
+	pikapic_loadgfx Pic_e4b39 ;gives you its back, hates you!
 	pikapic_loadgfx GFX_e4bde
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_14, $99, $0, $0
@@ -127,7 +129,7 @@ PikaPicAnimScript9:
 PikaPicAnimScript10:
 	pikapic_setduration 56
 	pikapic_loadgfx Pic_e4c3e
-	pikapic_loadgfx GFX_e4ce0
+	pikapic_loadgfx GFX_e4ce0 ;one heart
 	pikapic_loadgfx GFX_e4e70
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_16, $99, $0, $0
@@ -147,7 +149,7 @@ PikaPicAnimScript11:
 
 PikaPicAnimScript12:
 	pikapic_setduration 50
-	pikapic_loadgfx Pic_e523f
+	pikapic_loadgfx Pic_e523f ;sighing unhappily
 	pikapic_loadgfx GFX_e52fe
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_18, $99, $0, $0
@@ -157,8 +159,8 @@ PikaPicAnimScript12:
 
 PikaPicAnimScript13:
 	pikapic_setduration 50
-	pikapic_loadgfx Pic_e548e
-	pikapic_loadgfx GFX_e5541
+	pikapic_loadgfx Pic_e548e ;face side
+	pikapic_loadgfx GFX_e5541 ;face side
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_19, $99, $0, $0
 	pikapic_waitbgmap
@@ -167,7 +169,7 @@ PikaPicAnimScript13:
 
 PikaPicAnimScript14:
 	pikapic_setduration 40
-	pikapic_loadgfx Pic_e56d1
+	pikapic_loadgfx Pic_e56d1 ;electrical shock?
 	pikapic_loadgfx GFX_e5794
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_20, $99, $0, $0
@@ -178,7 +180,7 @@ PikaPicAnimScript14:
 PikaPicAnimScript15:
 	pikapic_setduration 50
 	pikapic_loadgfx Pic_e5924
-	pikapic_loadgfx GFX_e59ed
+	pikapic_loadgfx GFX_e59ed ;fist raised wink
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_21, $99, $0, $0
 	pikapic_waitbgmap
@@ -187,7 +189,7 @@ PikaPicAnimScript15:
 
 PikaPicAnimScript16:
 	pikapic_setduration 32
-	pikapic_loadgfx Pic_e5b7d
+	pikapic_loadgfx Pic_e5b7d ;one heart
 	pikapic_loadgfx GFX_e5c4d
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_22, $99, $0, $0
@@ -197,7 +199,7 @@ PikaPicAnimScript16:
 
 PikaPicAnimScript17:
 	pikapic_setduration 100
-	pikapic_loadgfx Pic_e5ddd
+	pikapic_loadgfx Pic_e5ddd ;eyes closed. second appears identical except tailwag. unhappy
 	pikapic_loadgfx GFX_e5e90
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_23, $99, $0, $0
@@ -207,8 +209,8 @@ PikaPicAnimScript17:
 
 PikaPicAnimScript18:
 	pikapic_setduration 32
-	pikapic_loadgfx GFX_e6020
-	pikapic_loadgfx GFX_e61b0
+	pikapic_loadgfx GFX_e6020 ;neutral
+	pikapic_loadgfx GFX_e61b0 ;hand up wink
 	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_24, $99, $0, $0
 	pikapic_waitbgmap
@@ -217,7 +219,7 @@ PikaPicAnimScript18:
 
 PikaPicAnimScript19:
 	pikapic_setduration 44
-	pikapic_loadgfx Pic_e6340
+	pikapic_loadgfx Pic_e6340 ;two hearts
 	pikapic_loadgfx GFX_e63f7
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_25, $99, $0, $0
@@ -227,7 +229,7 @@ PikaPicAnimScript19:
 
 PikaPicAnimScript20:
 	pikapic_setduration 50
-	pikapic_loadgfx Pic_e6587
+	pikapic_loadgfx Pic_e6587 ;mega hearts
 	pikapic_loadgfx GFX_e6646
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_26, $99, $0, $0
@@ -239,7 +241,7 @@ PikaPicAnimScript21:
 	pikapic_setduration 40
 	pikapic_loadgfx Pic_e67d6
 	pikapic_loadgfx GFX_e682f
-	pikapic_loadgfx GFX_e69bf
+	pikapic_loadgfx GFX_e69bf ;bucket head
 	pikapic_loadgfx GFX_e6b4f
 	pikapic_loadgfx GFX_e6cdf
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
@@ -250,7 +252,7 @@ PikaPicAnimScript21:
 
 PikaPicAnimScript22:
 	pikapic_setduration 40
-	pikapic_loadgfx GFX_e6e6f
+	pikapic_loadgfx GFX_e6e6f ;scared
 	pikapic_loadgfx GFX_e6fff
 	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_28, $99, $0, $0
@@ -260,7 +262,7 @@ PikaPicAnimScript22:
 
 PikaPicAnimScript23:
 	pikapic_setduration 70
-	pikapic_loadgfx GFX_e718f
+	pikapic_loadgfx GFX_e718f ;question mark again?
 	pikapic_loadgfx GFX_e731f
 	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_29, $99, $0, $0
@@ -270,7 +272,7 @@ PikaPicAnimScript23:
 
 PikaPicAnimScript24:
 	pikapic_setduration 60
-	pikapic_loadgfx GFX_e74af
+	pikapic_loadgfx GFX_e74af ;question mark
 	pikapic_loadgfx GFX_e763f
 	pikapic_animation PikaPicAnimBGFrames_5, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_30, $99, $0, $0
@@ -280,7 +282,7 @@ PikaPicAnimScript24:
 
 PikaPicAnimScript25:
 	pikapic_setduration 50
-	pikapic_loadgfx Pic_e77cf
+	pikapic_loadgfx Pic_e77cf ;refusal/dislike
 	pikapic_loadgfx GFX_e7863
 	pikapic_loadgfx GFX_e79f3
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
@@ -296,7 +298,7 @@ Data_fe51f:
 	pikapic_waitbgmap
 PikaPicAnimScript26:
 	pikapic_setduration 100
-	pikapic_loadgfx Pic_e5000
+	pikapic_loadgfx Pic_e5000 ;sleeping
 	pikapic_loadgfx GFX_e50af
 	pikapic_loadgfx GFX_e7b83
 	pikapic_loadgfx GFX_e7d13
@@ -308,7 +310,7 @@ PikaPicAnimScript26:
 
 PikaPicAnimScript27:
 	pikapic_setduration 30
-	pikapic_loadgfx Pic_f0abf
+	pikapic_loadgfx Pic_f0abf ;shocked face, used at bill house
 	pikapic_loadgfx GFX_f0b64
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_33, $99, $0, $0
@@ -318,7 +320,7 @@ PikaPicAnimScript27:
 
 PikaPicAnimScript28:
 	pikapic_setduration 64
-	pikapic_loadgfx Pic_f0cf4
+	pikapic_loadgfx Pic_f0cf4 ;sickly
 	pikapic_loadgfx GFX_f0d82
 	pikapic_animation PikaPicAnimBGFrames_4, $80, $0, $0
 	pikapic_animation PikaPicAnimBGFrames_34, $99, $0, $0
