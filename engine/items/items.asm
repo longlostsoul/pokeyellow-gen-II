@@ -262,14 +262,18 @@ ItemUseBall:
 	ld [H_MULTIPLIER],a
 	call Multiply
 
-; Determine BallFactor. It's 8 for Great Balls and 12 for the others.
+; Determine BallFactor. It's 8 for Great Balls, 4 for Ultra Balls, and 12 for the others.
 	ld a,[wcf91]
 	cp GREAT_BALL
-	ld a,12
-	jr nz,.skip1
-	ld a,8
+	ld b,8
+	jr z,.skip1
+	cp ULTRA_BALL
+	ld b,4
+	jr z,.skip1
+	ld b,12
 
 .skip1
+	ld a,b
 ; Note that the results of all division operations are floored.
 
 ; Calculate (MaxHP * 255) / BallFactor.
@@ -386,7 +390,7 @@ ItemUseBall:
 	ld [H_DIVISOR],a
 	ld b,4
 	call Divide
-	
+
 ; Determine Status2.
 ; no status ailment:     Status2 = 0
 ; Burn/Paralysis/Poison: Status2 = 5
@@ -529,7 +533,7 @@ ItemUseBall:
 	cp BATTLE_TYPE_OLD_MAN ; is this the old man battle?
 	jp z,.oldManCaughtMon ; if so, don't give the player the caught Pokémon
 	cp BATTLE_TYPE_PIKACHU
-	jr z,.oldManCaughtMon ; same with Pikachu battle
+	jp z,.oldManCaughtMon ; same with Pikachu battle
 	ld hl,ItemUseBallText05
 	call PrintText
 
@@ -584,6 +588,12 @@ ItemUseBall:
 	jr nz,.printTransferredToPCText
 	ld hl,ItemUseBallText08
 .printTransferredToPCText
+	call PrintText
+;add reminder that box is now full
+	ld a,[wNumInBox] ; is box full?
+	cp MONS_PER_BOX
+	jr nz, .done
+	ld hl, BoxFullReminderTXT
 	call PrintText
 	jr .done
 
@@ -784,6 +794,7 @@ SurfingNoPlaceToGetOffText:
 
 ItemUsePokedex:
 	predef_jump ShowPokedexMenu
+
 ItemUseEvoStone:
 	ld a, [wIsInBattle]
 	and a
@@ -804,24 +815,8 @@ ItemUseEvoStone:
 	jr c, .canceledItemUse
 	ld a, b
 	ld [wcf91], a
-  ld a, $01 ;use stone instead of happy to evo pikachu if you want
-	ld [wForceEvolution], a
-	ld a, SFX_HEAL_AILMENT
-	ld a, SFX_HEAL_AILMENT
-	call PlaySoundWaitForCurrent
-	call WaitForSoundToFinish
 	ld a, $01
 	ld [wForceEvolution], a
-	callab TryEvolvingMon ; try to evolve pokemon
-	pop af
-	ld [wWhichPokemon], a
-	ld hl, wNumBagItems
-	ld a, 1 ; remove 1 stone
-	ld [wItemQuantity], a
-	jp RemoveItemFromInventory
-
-
-.notPlayerPikachu
 	ld a, SFX_HEAL_AILMENT
 	call PlaySoundWaitForCurrent
 	call WaitForSoundToFinish
@@ -1307,6 +1302,13 @@ ItemUseMedicine:
 	jp .done
 
 .doneHealing
+	; Do happiness addition
+	push hl
+	push de
+	callabd_ModifyPikachuHappiness PIKAHAPPY_USEDITEM
+	pop de
+	pop hl
+
 	ld a, [wPseudoItemID]
 	and a ; using Softboiled?
 	jr nz, .skipRemovingItem ; no item to remove if using Softboiled
@@ -2535,7 +2537,7 @@ ItemUseTMHM:
 	ld [wWhichPokemon], a
 	ld a, b
 	and a
-	ret z
+	ret
 
 	ld a, [wWhichPokemon]
 	push af
@@ -2674,6 +2676,12 @@ BoxFullCannotThrowBallText:
 DontHavePokemonText:
 	TX_FAR _DontHavePokemonText
 	db "@"
+
+;add a reminder that the box is full
+BoxFullReminderTXT:
+	TX_FAR _BoxIsFullReminderText
+	db "@"
+	
 
 ItemUseText00:
 	TX_FAR _ItemUseText001
