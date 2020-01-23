@@ -28,7 +28,7 @@ MoveEnd:
 	move CUT,          NO_ADDITIONAL_EFFECT,        50, STEEL,    95, 30
 	move GUST,         NO_ADDITIONAL_EFFECT,        40, FLYING,   100, 35
 	move WING_ATTACK,  NO_ADDITIONAL_EFFECT,        60, FLYING,   100, 35
-	move WHIRLWIND,    DRAIN_HP_EFFECT,   45, FAIRY,    85, 20;Fairy wind. old SWITCH_AND_TELEPORT_EFFECT
+	move GUST,    DRAIN_HP_EFFECT,   45, FAIRY,    85, 20;Fairy wind. old SWITCH_AND_TELEPORT_EFFECT, Whirlwind
 	move FLY,          FLY_EFFECT,                  70, FLYING,    95, 15
 	move BIND,         TRAPPING_EFFECT,             15, NORMAL,    75, 20
 	move SLAM,         NO_ADDITIONAL_EFFECT,        80, NORMAL,    75, 20
@@ -56,7 +56,7 @@ MoveEnd:
 	move LEER,         DEFENSE_DOWN1_EFFECT,         0, NORMAL,   100, 30
 	move BITE,         FLINCH_SIDE_EFFECT1,         60, DARK,   100, 25
 	move GROWL,        ATTACK_DOWN1_EFFECT,          0, NORMAL,   100, 40
-	move ROAR,         FLINCH_SIDE_EFFECT2,  45, DRAGON,   100, 20   ;SWITCH_AND_TELEPORT_EFFECT,
+	move FLAMETHROWER,         FLINCH_SIDE_EFFECT2,  45, DRAGON,   100, 20   ;old SWITCH_AND_TELEPORT_EFFECT,ROAR
 	move SING,         SLEEP_EFFECT,                 0, NORMAL,    55, 15
 	move SUPERSONIC,   CONFUSION_EFFECT,             0, STEEL,    55, 20
 	move SONICBOOM,    SPECIAL_DAMAGE_EFFECT,        1, STEEL,    90, 20
