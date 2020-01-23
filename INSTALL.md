@@ -8,7 +8,7 @@
 	sudo make install
 	cd ..
 
-	git clone --recursive https://github.com/pret/pokeyellow
+	git clone --recursive https://github.com/longlostsoul/pokeyellow-gen-II
 	cd pokeyellow
 
 To build **pokeyellow.gbc**:
@@ -52,7 +52,7 @@ In the **Cygwin terminal**:
 	lynx -source bootstrap.pypa.io/get-pip.py | python
 	pip install pypng
 
-	git clone --recursive https://github.com/pret/pokeyellow
+	git clone --recursive https://github.com/longlostsoul/pokeyellow-gen-II
 	cd pokeyellow
 
 Copy the ROM "Pokemon Yellow (U) [C][!].gbc" to the same directory as the disassembly under the name "baserom.gbc".
