@@ -1328,8 +1328,10 @@ Mon027_EvosMoves:
 ;Learnset
   db 5,POISON_STING
 	db 10,SAND_ATTACK
+	db 12,AURORA_BEAM
 	db 17,SLASH
 	db 24,DIG
+	db 25,ICE_BEAM
 	db 31,SWIFT
 	db 38,FURY_SWIPES
 	db 0
@@ -1342,9 +1344,11 @@ Mon028_EvosMoves:
 	db 10,SAND_ATTACK
 	db 17,SLASH
 	db 27,POISON_STING
+	db 30,ICE_BEAM
 	db 36,SWIFT
 	db 47,FURY_SWIPES
 	db 50,EARTHQUAKE
+	db 55,BLIZZARD
 	db 0
 
 Mon138_EvosMoves:

@@ -4,8 +4,8 @@ db 100 ; base attack
 db 110 ; base defense
 db 65 ; base speed
 db 55 ; base special
-db GROUND ; species type 1
-db GROUND ; species type 2
+db ICE ; species type 1
+db STEEL ; species type 2
 db 90 ; catch rate
 db 163 ; base exp yield
 INCBIN "pic/ymon/sandslash.pic",0,1 ; 66, sprite dimensions
@@ -14,7 +14,7 @@ dw SandslashPicBack
 ; attacks known at lvl 0
 db SCRATCH
 db SAND_ATTACK
-db 0
+db AURORA_BEAM
 db 0
 db 0 ; growth rate
 ; learnset
