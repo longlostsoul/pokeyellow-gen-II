@@ -237,8 +237,9 @@ Mon035_EvosMoves:
 	db EV_ITEM,MOON_STONE,1,CLEFABLE
 	db 0
 ;Learnset
+  db 10,DOUBLESLAP
 	db 13,SING
-	db 18,DOUBLESLAP
+	db 18,WHIRLWIND
 	db 24,MINIMIZE
 	db 31,METRONOME
 	db 39,DEFENSE_CURL
@@ -306,6 +307,7 @@ Mon002_EvosMoves:
 	db 13,VINE_WHIP
 	db 22,POISONPOWDER
 	db 30,RAZOR_LEAF
+	db 37,WHIRLWIND
 	db 38,GROWTH
 	db 46,SLEEP_POWDER
 	db 54,SOLARBEAM
@@ -1232,9 +1234,10 @@ Mon147_EvosMoves:
 	db 0
 ;Learnset
 	db 10,THUNDER_WAVE
+	db 15,DRAGON_RAGE
 	db 20,AGILITY
 	db 30,SLAM
-	db 40,DRAGON_RAGE
+	db 40,ROAR
 	db 50,HYPER_BEAM
 	db 0
 
@@ -1245,9 +1248,10 @@ Mon148_EvosMoves:
 	db 0
 ;Learnset
 	db 10,THUNDER_WAVE
+	db 15,DRAGON_RAGE
 	db 20,AGILITY
 	db 35,SLAM
-	db 45,DRAGON_RAGE
+	db 45,ROAR
 	db 55,HYPER_BEAM
 	db 0
 
@@ -1257,6 +1261,7 @@ Mon140_EvosMoves:
 	db EV_LEVEL,40,KABUTOPS
 	db 0
 ;Learnset
+  db 20,DIG
 	db 34,ABSORB
 	db 39,SLASH
 	db 44,LEER
@@ -1285,6 +1290,7 @@ Mon116_EvosMoves:
 	db 30,WATER_GUN
 	db 37,AGILITY
 	db 45,HYDRO_PUMP
+	db 50,ROAR
 	db 0
 
 Mon117_EvosMoves:
@@ -1297,6 +1303,7 @@ Mon117_EvosMoves:
 	db 30,WATER_GUN
 	db 41,AGILITY
 	db 52,HYDRO_PUMP
+	db 55,ROAR
 	db 0
 
 Mon168_EvosMoves:
@@ -1319,9 +1326,10 @@ Mon027_EvosMoves:
 	db EV_LEVEL,22,SANDSLASH
 	db 0
 ;Learnset
+  db 5,POISON_STING
 	db 10,SAND_ATTACK
 	db 17,SLASH
-	db 24,POISON_STING
+	db 24,DIG
 	db 31,SWIFT
 	db 38,FURY_SWIPES
 	db 0
@@ -1336,6 +1344,7 @@ Mon028_EvosMoves:
 	db 27,POISON_STING
 	db 36,SWIFT
 	db 47,FURY_SWIPES
+	db 50,EARTHQUAKE
 	db 0
 
 Mon138_EvosMoves:
@@ -1344,10 +1353,12 @@ Mon138_EvosMoves:
 	db EV_LEVEL,40,OMASTAR
 	db 0
 ;Learnset
+  db 20,ROCK_SLIDE
 	db 34,HORN_ATTACK
 	db 39,LEER
 	db 46,SPIKE_CANNON
 	db 53,HYDRO_PUMP
+
 	db 0
 
 Mon139_EvosMoves:
@@ -1359,6 +1370,7 @@ Mon139_EvosMoves:
 	db 39,LEER
 	db 44,SPIKE_CANNON
 	db 49,HYDRO_PUMP
+	db 55,RAZOR_WIND
 	db 0
 
 Mon039_EvosMoves:
@@ -1368,6 +1380,7 @@ Mon039_EvosMoves:
 	db 0
 ;Learnset
 	db 9,POUND
+	db 10,WHIRLWIND
 	db 14,DISABLE
 	db 19,DEFENSE_CURL
 	db 24,DOUBLESLAP
@@ -1497,6 +1510,7 @@ Mon046_EvosMoves:
 	db 27,SPORE
 	db 34,SLASH
 	db 41,GROWTH
+	db 50,RAZOR_WIND
 	db 0
 
 Mon061_EvosMoves:
@@ -1549,6 +1563,7 @@ Mon015_EvosMoves:
 	db 25,RAGE
 	db 30,PIN_MISSILE
 	db 35,AGILITY
+	db 40,RAZOR_WIND;bug now
 	db 0
 
 Mon170_EvosMoves:
@@ -1584,6 +1599,7 @@ Mon057_EvosMoves:
 	db 37,SEISMIC_TOSS
 	db 46,THRASH
 	db 45,SCREECH
+	db 50,ROAR
 	db 0
 
 Mon051_EvosMoves:
@@ -1607,6 +1623,7 @@ Mon049_EvosMoves:
 	db 27,LEECH_LIFE
 	db 30,STUN_SPORE
 	db 38,PSYBEAM
+	db 40,RAZOR_WIND ;now bug move silver wind
 	db 43,SLEEP_POWDER
 	db 50,PSYCHIC_M
 	db 0
@@ -1668,6 +1685,7 @@ Mon012_EvosMoves:
 	db 28,GUST
 	db 34,PSYCHIC
 	db 40,TRI_ATTACK
+	db 50,RAZOR_WIND
 	db 0
 
 Mon068_EvosMoves:
@@ -1698,6 +1716,7 @@ Mon055_EvosMoves:
 	db 31,DISABLE
 	db 39,CONFUSION
 	db 48,FURY_SWIPES
+	db 50,PSYCHIC
 	db 59,HYDRO_PUMP
 	db 0
 
@@ -1725,6 +1744,7 @@ Mon042_EvosMoves:
 	db 32,WING_ATTACK
 	db 40,SLUDGE
 	db 43,HAZE
+	db 50,RAZOR_WIND
 	db 0
 
 Mon150_EvosMoves:
@@ -1756,7 +1776,9 @@ Mon129_EvosMoves:
 	db EV_LEVEL,20,GYARADOS
 	db 0
 ;Learnset
-	db 15,TACKLE
+	db 10,TACKLE
+	db 15,ROAR
+	db 30,THRASH
 	db 0
 
 Mon174_EvosMoves:
@@ -1847,6 +1869,7 @@ Mon110_EvosMoves:
 	db 32,SLUDGE
 	db 39,SMOKESCREEN
 	db 43,SELFDESTRUCT
+	db 46,WHIRLWIND
 	db 49,HAZE
 	db 53,EXPLOSION
 	db 0
@@ -1861,6 +1884,7 @@ Mon053_EvosMoves:
 	db 24,SCREECH
 	db 37,FURY_SWIPES
 	db 51,SLASH
+	db 55,ROAR
 	db 0
 
 Mon105_EvosMoves:
@@ -1875,6 +1899,7 @@ Mon105_EvosMoves:
 	db 33,FOCUS_ENERGY
 	db 41,THRASH
 	db 48,BONEMERANG
+	db 50,NIGHT_SHADE
 	db 55,RAGE
 	db 0
 
@@ -2009,6 +2034,7 @@ Mon118_EvosMoves:
 ;Learnset
 	db 19,SUPERSONIC
 	db 24,HORN_ATTACK
+	db 27,WHIRLWIND ;now fairy wind. for versatility, since goldeen is so forgettable.
 	db 30,FURY_ATTACK
 	db 37,WATERFALL
 	db 45,HORN_DRILL
@@ -2025,6 +2051,7 @@ Mon119_EvosMoves:
 	db 30,FURY_ATTACK
 	db 39,WATERFALL
 	db 48,HORN_DRILL
+	db 50,FIRE_BLAST
 	db 54,AGILITY
 	db 0
 
@@ -2062,9 +2089,10 @@ Mon077_EvosMoves:
 	db EV_LEVEL,40,RAPIDASH
 	db 0
 ;Learnset
+  db 25,GROWL
 	db 30,TAIL_WHIP
 	db 32,STOMP
-	db 35,GROWL
+	db 35,WHIRLWIND
 	db 39,FIRE_SPIN
 	db 43,TAKE_DOWN
 	db 48,AGILITY
@@ -2077,7 +2105,7 @@ Mon078_EvosMoves:
 ;Learnset
 	db 30,TAIL_WHIP
 	db 32,STOMP
-	db 35,GROWL
+	db 35,WHIRLWIND ;now a fairy move
 	db 39,FIRE_SPIN
 	db 47,TAKE_DOWN
 	db 55,AGILITY
@@ -2141,6 +2169,7 @@ Mon074_EvosMoves:
 	db 0
 ;Learnset
 	db 11,DEFENSE_CURL
+	db 15,THUNDERSHOCK
 	db 16,ROCK_THROW
 	db 21,SELFDESTRUCT
 	db 26,HARDEN
@@ -2153,6 +2182,7 @@ Mon137_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
+  db 20,SLAM
 	db 23,PSYBEAM
 	db 28,RECOVER
 	db 35,AGILITY
@@ -2169,6 +2199,7 @@ Mon142_EvosMoves:
 	db 38,BITE
 	db 45,TAKE_DOWN
 	db 54,HYPER_BEAM
+	db 56,ROAR
 	db 0
 
 Mon184_EvosMoves:
@@ -2274,6 +2305,7 @@ Mon006_EvosMoves:
 	db 36,SLASH
 	db 46,FLAMETHROWER
 	db 55,FIRE_SPIN
+	db 58,ROAR
 	db 0
 
 Mon187_EvosMoves:
@@ -2380,4 +2412,5 @@ Mon071_EvosMoves:
 	db 13,WRAP
 	db 15,POISONPOWDER
 	db 18,SLEEP_POWDER
+	db 50,BITE
 	db 0

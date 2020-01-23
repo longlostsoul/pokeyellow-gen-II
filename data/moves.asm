@@ -16,19 +16,19 @@ MoveEnd:
 	move DOUBLESLAP,   TWO_TO_FIVE_ATTACKS_EFFECT,  15, FAIRY,    85, 10
 	move COMET_PUNCH,  TWO_TO_FIVE_ATTACKS_EFFECT,  18, FAIRY,    85, 15
 	move MEGA_PUNCH,   NO_ADDITIONAL_EFFECT,        80, NORMAL,    85, 20
-	move PAY_DAY,      PAY_DAY_EFFECT,              40, NORMAL,   100, 20
+	move PAY_DAY,      PAY_DAY_EFFECT,              40, DARK,   100, 20
 	move FIRE_PUNCH,   BURN_SIDE_EFFECT1,           75, FIRE,     100, 15
 	move ICE_PUNCH,    FREEZE_SIDE_EFFECT,          75, ICE,      100, 15
 	move THUNDERPUNCH, PARALYZE_SIDE_EFFECT1,       75, ELECTRIC, 100, 15
 	move SCRATCH,      NO_ADDITIONAL_EFFECT,        40, NORMAL,   100, 35
 	move VICEGRIP,     NO_ADDITIONAL_EFFECT,        55, BUG,   100, 30
 	move GUILLOTINE,   OHKO_EFFECT,                  1, NORMAL,    30,  5
-	move RAZOR_WIND,   CHARGE_EFFECT,               80, FLYING,    75, 10
+	move RAZOR_WIND,   PARALYZE_SIDE_EFFECT1,               80, BUG,    75, 10
 	move SWORDS_DANCE, ATTACK_UP2_EFFECT,            0, NORMAL,   100, 30
 	move CUT,          NO_ADDITIONAL_EFFECT,        50, STEEL,    95, 30
 	move GUST,         NO_ADDITIONAL_EFFECT,        40, FLYING,   100, 35
 	move WING_ATTACK,  NO_ADDITIONAL_EFFECT,        60, FLYING,   100, 35
-	move WHIRLWIND,    SWITCH_AND_TELEPORT_EFFECT,   0, FLYING,    85, 20
+	move WHIRLWIND,    DRAIN_HP_EFFECT,   45, FAIRY,    85, 20;Fairy wind. old SWITCH_AND_TELEPORT_EFFECT
 	move FLY,          FLY_EFFECT,                  70, FLYING,    95, 15
 	move BIND,         TRAPPING_EFFECT,             15, NORMAL,    75, 20
 	move SLAM,         NO_ADDITIONAL_EFFECT,        80, NORMAL,    75, 20
@@ -51,12 +51,12 @@ MoveEnd:
 	move DOUBLE_EDGE,  RECOIL_EFFECT,              100, NORMAL,   100, 15
 	move TAIL_WHIP,    DEFENSE_DOWN1_EFFECT,         0, NORMAL,   100, 30
 	move POISON_STING, POISON_SIDE_EFFECT1,         40, POISON,   100, 35
-	move TWINEEDLE,    TWINEEDLE_EFFECT,            25, BUG,      100, 20
+	move TWINEEDLE,    TWINEEDLE_EFFECT,            30, BUG,      100, 20
 	move PIN_MISSILE,  TWO_TO_FIVE_ATTACKS_EFFECT,  25, BUG,       85, 20
 	move LEER,         DEFENSE_DOWN1_EFFECT,         0, NORMAL,   100, 30
 	move BITE,         FLINCH_SIDE_EFFECT1,         60, DARK,   100, 25
 	move GROWL,        ATTACK_DOWN1_EFFECT,          0, NORMAL,   100, 40
-	move ROAR,         SWITCH_AND_TELEPORT_EFFECT,   0, NORMAL,   100, 20
+	move ROAR,         FLINCH_SIDE_EFFECT2,  45, DRAGON,   100, 20   ;SWITCH_AND_TELEPORT_EFFECT,
 	move SING,         SLEEP_EFFECT,                 0, NORMAL,    55, 15
 	move SUPERSONIC,   CONFUSION_EFFECT,             0, STEEL,    55, 20
 	move SONICBOOM,    SPECIAL_DAMAGE_EFFECT,        1, STEEL,    90, 20
@@ -76,7 +76,7 @@ MoveEnd:
 	move HYPER_BEAM,   HYPER_BEAM_EFFECT,          150, NORMAL,    90,  5
 	move PECK,         NO_ADDITIONAL_EFFECT,        35, FLYING,   100, 35
 	move DRILL_PECK,   NO_ADDITIONAL_EFFECT,        80, FLYING,   100, 20
-	move SUBMISSION,   RECOIL_EFFECT,               100, FIGHTING,  80, 25
+	move SUBMISSION,   RECOIL_EFFECT,               120, FIGHTING,  90, 25
 	move LOW_KICK,     FLINCH_SIDE_EFFECT2,         50, FIGHTING,  90, 20
 	move COUNTER,      NO_ADDITIONAL_EFFECT,         1, FIGHTING, 100, 20
 	move SEISMIC_TOSS, SPECIAL_DAMAGE_EFFECT,        1, FIGHTING, 100, 20
@@ -133,7 +133,7 @@ MoveEnd:
 	move SELFDESTRUCT, EXPLODE_EFFECT,             130, NORMAL,   100,  5
 	move EGG_BOMB,     NO_ADDITIONAL_EFFECT,       100, NORMAL,    75, 10
 	move LICK,         PARALYZE_SIDE_EFFECT2,       40, GHOST,    100, 30
-	move SMOG,         POISON_SIDE_EFFECT2,         20, POISON,    70, 20
+	move SMOG,         POISON_SIDE_EFFECT2,         25, POISON,    70, 20
 	move SLUDGE,       POISON_SIDE_EFFECT2,         85, POISON,   100, 20
 	move BONE_CLUB,    FLINCH_SIDE_EFFECT1,         65, GROUND,    85, 20
 	move FIRE_BLAST,   BURN_SIDE_EFFECT2,          120, FIRE,      85,  5
@@ -150,10 +150,10 @@ MoveEnd:
 	move GLARE,        PARALYZE_EFFECT,              0, NORMAL,    75, 30
 	move DREAM_EATER,  DREAM_EATER_EFFECT,         100, PSYCHIC,  100, 15
 	move POISON_GAS,   POISON_EFFECT,                0, POISON,    55, 40
-	move BARRAGE,      TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,    85, 20
-	move LEECH_LIFE,   DRAIN_HP_EFFECT,             40, BUG,      100, 15
-	move LOVELY_KISS,  SLEEP_EFFECT,                 0, NORMAL,    75, 10
-	move SKY_ATTACK,   CHARGE_EFFECT,              140, FLYING,    90,  5
+	move BARRAGE,      TWO_TO_FIVE_ATTACKS_EFFECT,  15, GRASS,    85, 20
+	move LEECH_LIFE,   DRAIN_HP_EFFECT,             50, BUG,      100, 15
+	move LOVELY_KISS,  SLEEP_EFFECT,                 0, FAIRY,    75, 10
+	move SKY_ATTACK,   CHARGE_EFFECT,              150, FLYING,    95,  5
 	move TRANSFORM,    TRANSFORM_EFFECT,             0, NORMAL,   100, 10
 	move BUBBLE,       SPEED_DOWN_SIDE_EFFECT,      20, WATER,    100, 30
 	move DIZZY_PUNCH,  NO_ADDITIONAL_EFFECT,        70, NORMAL,   100, 10
