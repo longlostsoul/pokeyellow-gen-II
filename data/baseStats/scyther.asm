@@ -5,7 +5,7 @@ db 80 ; base defense
 db 105 ; base speed
 db 55 ; base special
 db BUG ; species type 1
-db FLYING ; species type 2
+db STEEL ; species type 2
 db 45 ; catch rate
 db 187 ; base exp yield
 INCBIN "pic/ymon/scyther.pic",0,1 ; 77, sprite dimensions

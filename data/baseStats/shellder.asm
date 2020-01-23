@@ -5,7 +5,7 @@ db 100 ; base defense
 db 40 ; base speed
 db 45 ; base special
 db WATER ; species type 1
-db WATER ; species type 2
+db DARK ; species type 2
 db 190 ; catch rate
 db 97 ; base exp yield
 INCBIN "pic/ymon/shellder.pic",0,1 ; 55, sprite dimensions
@@ -14,7 +14,7 @@ dw ShellderPicBack
 ; attacks known at lvl 0
 db TACKLE
 db WITHDRAW
-db 0
+db BITE
 db 0
 db 5 ; growth rate
 ; learnset

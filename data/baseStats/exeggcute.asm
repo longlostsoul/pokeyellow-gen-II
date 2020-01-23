@@ -14,7 +14,7 @@ dw ExeggcutePicBack
 ; attacks known at lvl 0
 db BARRAGE
 db HYPNOSIS
-db 0
+db DRAGON_RAGE
 db 0
 db 5 ; growth rate
 ; learnset

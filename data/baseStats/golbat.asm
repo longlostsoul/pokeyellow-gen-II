@@ -4,7 +4,7 @@ db 80 ; base attack
 db 70 ; base defense
 db 90 ; base speed
 db 75 ; base special
-db POISON ; species type 1
+db DARK ; species type 1
 db FLYING ; species type 2
 db 90 ; catch rate
 db 171 ; base exp yield

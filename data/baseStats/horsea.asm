@@ -5,7 +5,7 @@ db 70 ; base defense
 db 60 ; base speed
 db 70 ; base special
 db WATER ; species type 1
-db WATER ; species type 2
+db DRAGON ; species type 2
 db 225 ; catch rate
 db 83 ; base exp yield
 INCBIN "pic/ymon/horsea.pic",0,1 ; 55, sprite dimensions

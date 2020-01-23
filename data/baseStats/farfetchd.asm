@@ -4,7 +4,7 @@ db 65 ; base attack
 db 55 ; base defense
 db 60 ; base speed
 db 58 ; base special
-db NORMAL ; species type 1
+db FIGHTING ; species type 1
 db FLYING ; species type 2
 db 45 ; catch rate
 db 94 ; base exp yield
@@ -13,9 +13,9 @@ dw FarfetchdPicFront
 dw FarfetchdPicBack
 ; attacks known at lvl 0
 db PECK
-db SAND_ATTACK
-db 0
-db 0
+db RAZOR_LEAF
+db KARATE_CHOP
+db LOW_KICK
 db 0 ; growth rate
 ; learnset
 	tmlearn 2,3,4,6,8

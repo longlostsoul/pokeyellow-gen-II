@@ -1,9 +1,9 @@
 db DEX_DRAGONAIR ; pokedex id
-db 61 ; base hp
+db 90 ; base hp
 db 84 ; base attack
 db 65 ; base defense
 db 70 ; base speed
-db 70 ; base special
+db 99 ; base special
 db DRAGON ; species type 1
 db DRAGON ; species type 2
 db 27 ; catch rate

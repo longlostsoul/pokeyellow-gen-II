@@ -5,7 +5,7 @@ db 60 ; base defense
 db 90 ; base speed
 db 90 ; base special
 db BUG ; species type 1
-db POISON ; species type 2
+db GHOST ; species type 2
 db 75 ; catch rate
 db 138 ; base exp yield
 INCBIN "pic/ymon/venomoth.pic",0,1 ; 77, sprite dimensions

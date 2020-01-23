@@ -4,7 +4,7 @@ db 45 ; base attack
 db 160 ; base defense
 db 70 ; base speed
 db 30 ; base special
-db ROCK ; species type 1
+db STEEL ; species type 1
 db GROUND ; species type 2
 db 45 ; catch rate
 db 108 ; base exp yield

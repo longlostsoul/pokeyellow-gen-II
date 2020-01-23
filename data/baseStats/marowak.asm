@@ -5,7 +5,7 @@ db 110 ; base defense
 db 45 ; base speed
 db 50 ; base special
 db GROUND ; species type 1
-db GROUND ; species type 2
+db GHOST ; species type 2
 db 75 ; catch rate
 db 124 ; base exp yield
 INCBIN "pic/ymon/marowak.pic",0,1 ; 66, sprite dimensions

@@ -5,7 +5,7 @@ db 55 ; base defense
 db 90 ; base speed
 db 65 ; base special
 db FIRE ; species type 1
-db FIRE ; species type 2
+db FAIRY ; species type 2
 db 190 ; catch rate
 db 152 ; base exp yield
 INCBIN "pic/ymon/ponyta.pic",0,1 ; 66, sprite dimensions
@@ -13,7 +13,7 @@ dw PonytaPicFront
 dw PonytaPicBack
 ; attacks known at lvl 0
 db EMBER
-db 0
+db TRI_ATTACK
 db 0
 db 0
 db 0 ; growth rate

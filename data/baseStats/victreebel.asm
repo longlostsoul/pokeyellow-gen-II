@@ -5,7 +5,7 @@ db 65 ; base defense
 db 70 ; base speed
 db 100 ; base special
 db GRASS ; species type 1
-db POISON ; species type 2
+db DARK ; species type 2
 db 45 ; catch rate
 db 191 ; base exp yield
 INCBIN "pic/ymon/victreebel.pic",0,1 ; 77, sprite dimensions

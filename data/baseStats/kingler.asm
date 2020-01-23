@@ -5,7 +5,7 @@ db 115 ; base defense
 db 75 ; base speed
 db 50 ; base special
 db WATER ; species type 1
-db WATER ; species type 2
+db STEEL ; species type 2
 db 60 ; catch rate
 db 206 ; base exp yield
 INCBIN "pic/ymon/kingler.pic",0,1 ; 77, sprite dimensions
@@ -15,7 +15,7 @@ dw KinglerPicBack
 db BUBBLE
 db LEER
 db VICEGRIP
-db 0
+db CUT
 db 0 ; growth rate
 ; learnset
 	tmlearn 3,6,8

@@ -14,7 +14,7 @@ dw VenonatPicBack
 ; attacks known at lvl 0
 db TACKLE
 db DISABLE
-db 0
+db LICK
 db 0
 db 0 ; growth rate
 ; learnset
