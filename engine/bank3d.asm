@@ -173,7 +173,7 @@ PikachuMoods:
 	db $00           ; Unknown (d = 11)
 
 RedPicBack:       INCBIN "pic/trainer/redb.pic"
-LeafPicBack::  INCBIN "pic/trainer/leafb.pic"
+LeafPicBack:  INCBIN "pic/trainer/leafb.pic"
 OldManPic:	       INCBIN "pic/trainer/oldman.pic"
 ProfOakPicBack:   INCBIN "pic/ytrainer/prof.oakb.pic"
 
